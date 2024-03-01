@@ -9,7 +9,7 @@ class SecondPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Second page"),
+        title: Text("Settings"),
       ),
     );
   }
