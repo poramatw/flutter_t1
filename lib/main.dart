@@ -2,7 +2,9 @@
 
 import 'package:flutter/material.dart';
 import 'package:start/pages/homepage.dart';
+import 'package:start/pages/profile.dart';
 import 'package:start/pages/secondPage.dart';
+import 'package:start/pages/welcome.dart';
 
 void main() {
   runApp(MyApp());
@@ -31,10 +33,12 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Homepage(),
+      home: Welcome(),
       routes: {
-         '/homepage': (context) => Homepage(),
-         '/secondpage': (context) => SecondPage(),
+        '/welcome': (context) => Welcome(),
+        '/homepage': (context) => Homepage(),
+        '/secondpage': (context) => SecondPage(),
+        '/profile': (context) => Profile(),
       },
     );
   }

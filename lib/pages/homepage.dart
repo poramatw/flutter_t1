@@ -1,28 +1,46 @@
-// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, prefer_const_constructors_in_immutables, avoid_unnecessary_containers
 
 import 'package:flutter/material.dart';
-import 'package:start/widgets/homepage.dart';
 
 class Homepage extends StatelessWidget {
-  const Homepage({super.key});
+  Homepage({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Center(child: Text("Start to dev")),
-        backgroundColor: Colors.white,
-        actions: [IconButton(onPressed: () {}, icon: Icon(Icons.login))],
-      ),
-      drawer: drawer(),
-      bottomNavigationBar: BottomNavigationBar(items: [
-        BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
-        BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Profile'),
-        BottomNavigationBarItem(icon: Icon(Icons.settings), label: 'Setting'),
-      ]),
-      body: body(),
-    );
+    return Scaffold(body: Body());
   }
 }
 
+class Body extends StatefulWidget {
+  const Body({super.key});
 
+  @override
+  State<Body> createState() => _BodyState();
+}
+
+class _BodyState extends State<Body> {
+  // create variables
+  int _count = 0;
+
+  // method
+  void _increment() {
+    setState(() {
+      _count++;
+    });
+  }
+
+  // UI (user interface)
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+      child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
+        Text('Hompage'),
+        Text(
+          _count.toString(),
+          style: TextStyle(fontSize: 40),
+        ),
+        ElevatedButton(onPressed: _increment, child: Text('Click'))
+      ]),
+    );
+  }
+}
