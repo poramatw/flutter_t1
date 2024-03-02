@@ -13,7 +13,7 @@ class Welcome extends StatefulWidget {
 }
 
 class _WelcomeState extends State<Welcome> {
-  int _selectedIndex = 0;
+  int _selectedIndex = 1;
 
   void _navBottomBar(int index) {
     setState(() {
@@ -33,39 +33,9 @@ class _WelcomeState extends State<Welcome> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Center(child: Text('Hello world 1st')),
-        backgroundColor: Colors.blue[100],
-      ),
-      drawer: Drawer(
-          child: ListView(
-        children: [
-          DrawerHeader(child: Icon(Icons.flutter_dash)),
-          ListTile(
-            title: Text('Home'),
-            onTap: () {
-              Navigator.pop(context);
-              Navigator.pushNamed(context, '/homepage');
-            },
-          ),
-          ListTile(
-            title: Text('Profile'),
-            onTap: () {
-              Navigator.pop(context);
-
-              Navigator.pushNamed(context, '/profile');
-            },
-          ),
-          ListTile(
-            title: Text('Settings'),
-            onTap: () {
-              Navigator.pop(context);
-
-              Navigator.pushNamed(context, '/secondpage');
-            },
-          )
-        ],
-      )),
+      // appBar: AppBar(
+      //   title: Center(child: Text('Flutter - Practice')),
+      // ),
       body: _pages[_selectedIndex],
       bottomNavigationBar: BottomNavigationBar(
           currentIndex: _selectedIndex,

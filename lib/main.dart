@@ -1,12 +1,17 @@
 // ignore_for_file: prefer_const_constructors, avoid_print, must_be_immutable, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
+import 'package:hive_flutter/adapters.dart';
 import 'package:start/pages/homepage.dart';
 import 'package:start/pages/profile.dart';
 import 'package:start/pages/secondPage.dart';
 import 'package:start/pages/welcome.dart';
 
-void main() {
+void main() async {
+  await Hive.initFlutter();
+
+  var box = await Hive.openBox('myBox');
+
   runApp(MyApp());
 }
 
@@ -33,7 +38,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Welcome(),
+      home: Profile(),
+      theme: ThemeData(primarySwatch: Colors.yellow),
       routes: {
         '/welcome': (context) => Welcome(),
         '/homepage': (context) => Homepage(),
