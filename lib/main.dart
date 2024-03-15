@@ -12,6 +12,12 @@ void main() async {
 
   var box = await Hive.openBox('myBox');
 
+<<<<<<< HEAD
+=======
+import 'pages/login.dart';
+
+void main() {
+>>>>>>> e0ab172 (updated)
   runApp(MyApp());
 }
 
@@ -38,6 +44,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
+<<<<<<< HEAD
       home: Profile(),
       theme: ThemeData(primarySwatch: Colors.yellow),
       routes: {
@@ -45,7 +52,15 @@ class MyApp extends StatelessWidget {
         '/homepage': (context) => Homepage(),
         '/secondpage': (context) => SecondPage(),
         '/profile': (context) => Profile(),
+=======
+      home: LoginPage(),
+      // home: Homepage(token: 's', userName: 'userName', email: 'email', firstName: 'firstName', gender: 'gender', image: 'image'),
+      routes: {
+        //  '/homepage': (context) => Homepage(),
+         '/secondpage': (context) => SecondPage(),
+>>>>>>> e0ab172 (updated)
       },
+      
     );
   }
 }
